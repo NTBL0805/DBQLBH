@@ -1,0 +1,23 @@
+﻿@model IEnumerable <WebBanHang.Models.Products>
+
+@{ 
+    ViewBag.Title = "Index";
+}
+<h2>Danh sach sp</h2>
+<div class="container">
+    <div class="row">
+        @foreach(var pro in Model)
+            {
+                <div class="col-sm-12 col-sm-6 col-md-4 col-lg-3 ">
+                    <div class="card-pro">
+                        <p>@Html.DisplayFor(model=>pro.ProductID)</p>
+                        <img src="@Url.Content(pro.ImagePro)"height="170"width="200" />
+                        <p>@Html.DisplayFor(model=>pro.NamePro)</p>
+                        <p>@Html.DisplayFor(model=>pro.Price)</p>
+                        <p><input type="submit"value="buy" /></p>
+                        <a href="/ShoppingCart/AddToCart/@pro.ProductID"class="btn btn-default">Buy</a>
+                    </div>
+                </div>
+            }
+    </div>
+</div>

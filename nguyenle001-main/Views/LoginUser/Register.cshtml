@@ -1,0 +1,49 @@
+﻿@model WebBanHang.Models.AdminUser
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm("Register", "LoginUser", FormMethod.Post))
+{
+<table>
+    <tr>
+        <th>@Html.LabelFor(m => m.ID)</th>
+        <td>@Html.TextBoxFor(m => m.ID)</td>
+        <Td>@Html.ValidationMessageFor(m=>m.ID)</Td>
+    </tr>
+    <tr>
+        <th>@Html.LabelFor(m => m.NameUser)</th>
+        <td>@Html.TextBoxFor(m => m.NameUser)</td>
+        <Td>@Html.ValidationMessageFor(m => m.NameUser)</Td>
+    </tr>
+    <tr>
+        <th>@Html.LabelFor(m => m.RoleUser)</th>
+        <td>@Html.TextBoxFor(m => m.RoleUser)</td>
+    </tr>
+    <tr>
+        <th>@Html.LabelFor(m => m.PasswordUser)</th>
+        <td>@Html.PasswordFor(m => m.PasswordUser)</td>
+        <Td>@Html.ValidationMessageFor(m => m.PasswordUser)</Td>
+
+
+        @*@if (ViewBag.ErrorRegister != null)
+        {
+            <span style="color:red">@ViewBag.ErrorRegister</span>
+        }*@
+
+    </tr>
+    <tr>
+        <th>@Html.LabelFor(m => m.ConfirmPass)</th>
+        <td>@Html.PasswordFor(m => m.ConfirmPass)</td>
+        <Td>@Html.ValidationMessageFor(m => m.ConfirmPass)</Td>
+
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="Dang Ky" />
+        </td>
+    </tr>
+</table>
+}

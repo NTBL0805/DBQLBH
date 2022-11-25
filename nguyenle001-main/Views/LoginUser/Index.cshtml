@@ -1,0 +1,30 @@
+﻿@model WebBanHang.Models.AdminUser
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("LoginAccount","LoginUser",FormMethod.Post)) 
+ {
+   <table>
+       <tr>
+           <th>@Html.LabelFor(m=>m.ID)</th>
+           <td>@Html.TextBoxFor(m=>m.ID)</td>
+       </tr>
+       <tr>
+           <th>@Html.LabelFor(m => m.PasswordUser)</th>
+           <td>@Html.PasswordFor(m => m.PasswordUser)</td>
+           @if (ViewBag.ErrorLogin != null)
+           {
+                <span style="color:red">@ViewBag.ErrorLogin</span>
+           } 
+       
+       </tr>
+       <tr>
+           <td colspan="2">
+               <input type="submit" value="Login"/>
+           </td>
+       </tr>
+   </table> 
+ }
